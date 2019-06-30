@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>T-Rest: BDD & TDD REST API Testing Tool</title>
+    
+    <meta name="description" content="T-Rest: BDD REST API Testing Tool" />
+    
+        <meta name="keywords" content="E2E REST API JSON chai mocha nodejs test testing request request-promise apigee BDD TDD" />
+        <meta name="keyword" content="E2E REST API JSON chai mocha nodejs test testing request request-promise apigee BDD TDD" />
+    
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <script src="scripts/jquery.min.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/jaguar.css">
+    
+    
+    <script>
+    var config = {"monospaceLinks":false,"cleverLinks":false,"applicationName":"T-Rest","meta":{"title":"T-Rest: BDD & TDD REST API Testing Tool","description":"T-Rest: BDD REST API Testing Tool","keyword":"E2E REST API JSON chai mocha nodejs test testing request request-promise apigee BDD TDD"},"linenums":false,"default":{}};
+    </script>
+    
+
+    
+</head>
+<body>
+<div id="wrap" class="clearfix">
+    
+<div class="navigation">
+    <h3 class="applicationName"><a href="index.html">T-Rest</a><iframe src="https://ghbtns.com/github-btn.html?user=kensol23&repo=t-rest&type=star&count=true" style="margin-top: 3px;" frameborder="0" scrolling="0" width="170px" height="20px"></iframe></h3>
+
+    <div class="search">
+        <input id="search" type="text" class="form-control input-sm" placeholder="Search Documentations">
+    </div>
+    <ul class="list">
+    
+        <li class="item" data-name="module:http">
+            <span class="title">
+                <a href="module-http.html">module:http</a>
+                
+            </span>
+            <ul class="members itemMembers">
+            
+            </ul>
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            <ul class="methods itemMembers">
+            
+            <span class="subtitle">Methods</span>
+            
+                <li data-name="module:http.get"><a href="module-http.html#.get">get</a></li>
+            
+                <li data-name="module:http.jar"><a href="module-http.html#.jar">jar</a></li>
+            
+                <li data-name="module:http.request"><a href="module-http.html#.request">request</a></li>
+            
+            </ul>
+            <ul class="events itemMembers">
+            
+            </ul>
+        </li>
+    
+        <li class="item" data-name="module:t-rest">
+            <span class="title">
+                <a href="module-t-rest.html">module:t-rest</a>
+                
+            </span>
+            <ul class="members itemMembers">
+            
+            </ul>
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            <ul class="methods itemMembers">
+            
+            <span class="subtitle">Methods</span>
+            
+                <li data-name="module:t-rest.clearDefaultRequest"><a href="module-t-rest.html#.clearDefaultRequest">clearDefaultRequest</a></li>
+            
+                <li data-name="module:t-rest.delete"><a href="module-t-rest.html#.delete">delete</a></li>
+            
+                <li data-name="module:t-rest.head"><a href="module-t-rest.html#.head">head</a></li>
+            
+                <li data-name="module:t-rest.options"><a href="module-t-rest.html#.options">options</a></li>
+            
+                <li data-name="module:t-rest.patch"><a href="module-t-rest.html#.patch">patch</a></li>
+            
+                <li data-name="module:t-rest.post"><a href="module-t-rest.html#.post">post</a></li>
+            
+                <li data-name="module:t-rest.put"><a href="module-t-rest.html#.put">put</a></li>
+            
+                <li data-name="module:t-rest.setDefaultRequest"><a href="module-t-rest.html#.setDefaultRequest">setDefaultRequest</a></li>
+            
+            </ul>
+            <ul class="events itemMembers">
+            
+            </ul>
+        </li>
+    
+    </ul>
+</div>
+
+    <div class="main">
+        <h1 class="page-title" data-filename="index.html">Index</h1>
+        
+
+
+    
+
+
+    <h3> </h3>
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    <section>
+        <article class="readme"><h2>Modules</h2>
+<dl>
+<dt><a href="#module_t-rest">t-rest</a></dt>
+<dd><p>T-Rest Module</p>
+</dd>
+<dt><a href="#module_http">http</a></dt>
+<dd><p>HTTP Module</p>
+</dd>
+</dl>
+<p><a name="module_t-rest"></a></p>
+<h2>t-rest</h2>
+<p>T-Rest Module</p>
+<p><strong>Example</strong></p>
+<pre class="prettyprint source lang-js"><code>var {request,get,post,put,patch,delete,head,options,expect,jar} = require(&quot;t-rest&quot;);
+</code></pre>
+<ul>
+<li><a href="#module_t-rest">t-rest</a>
+<ul>
+<li><a href="#module_t-rest.head">.head(uri, [options])</a> ⇒ <code>Promise</code></li>
+<li><a href="#module_t-rest.options">.options(uri, [options])</a> ⇒ <code>Promise</code></li>
+<li><a href="#module_t-rest.post">.post(uri, payload, [options])</a> ⇒ <code>Promise</code></li>
+<li><a href="#module_t-rest.patch">.patch(uri, [payload], [options])</a> ⇒ <code>Promise</code></li>
+<li><a href="#module_t-rest.put">.put(uri, payload, [options])</a> ⇒ <code>Promise</code></li>
+<li><a href="#module_t-rest.delete">.delete(uri, [payload], [options])</a> ⇒ <code>Promise</code></li>
+<li><a href="#module_t-rest.setDefaultRequest">.setDefaultRequest([options])</a></li>
+<li><a href="#module_t-rest.clearDefaultRequest">.clearDefaultRequest()</a></li>
+</ul>
+</li>
+</ul>
+<p><a name="module_t-rest.head"></a></p>
+<h3>t-rest.head(uri, [options]) ⇒ <code>Promise</code></h3>
+<p>Perform HTTP HEAD request</p>
+<p><strong>Kind</strong>: static method of <a href="#module_t-rest"><code>t-rest</code></a><br>
+<strong>Returns</strong>: <code>Promise</code> - - Promise which will resolve to a <a href="ChakramResponse">ChakramResponse</a> object</p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>uri</td>
+<td><code>string</code></td>
+<td>fully qualified uri</td>
+</tr>
+<tr>
+<td>[options]</td>
+<td><code>Object</code></td>
+<td>additional request options, see  <a href="https://github.com/request/request#requestoptions-callback">request library</a> for options</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong></p>
+<pre class="prettyprint source lang-js"><code>it(&quot;should allow HEAD requests&quot;, async function () {
+        var response = await head(&quot;http://httpbin.org/get?test=str&quot;);
+        ...
+    });
+</code></pre>
+<p><a name="module_t-rest.options"></a></p>
+<h3>t-rest.options(uri, [options]) ⇒ <code>Promise</code></h3>
+<p>Perform HTTP OPTIONS request</p>
+<p><strong>Kind</strong>: static method of <a href="#module_t-rest"><code>t-rest</code></a><br>
+<strong>Returns</strong>: <code>Promise</code> - - Promise which will resolve to a <a href="ChakramResponse">ChakramResponse</a> object</p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>uri</td>
+<td><code>string</code></td>
+<td>fully qualified uri</td>
+</tr>
+<tr>
+<td>[options]</td>
+<td><code>Object</code></td>
+<td>additional request options, see <a href="https://github.com/request/request#requestoptions-callback">request library</a> for options</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong></p>
+<pre class="prettyprint source lang-js"><code>it(&quot;should allow OPTIONS requests&quot;, async function () {
+        var headers = await options(&quot;http://httpbin.org/get?test=str&quot;).headers;
+        ...
+    });
+</code></pre>
+<p><a name="module_t-rest.post"></a></p>
+<h3>t-rest.post(uri, payload, [options]) ⇒ <code>Promise</code></h3>
+<p>Perform HTTP POST request</p>
+<p><strong>Kind</strong>: static method of <a href="#module_t-rest"><code>t-rest</code></a><br>
+<strong>Returns</strong>: <code>Promise</code> - - Promise which will resolve to a <a href="ChakramResponse">ChakramResponse</a> object</p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>uri</td>
+<td><code>string</code></td>
+<td>fully qualified uri</td>
+</tr>
+<tr>
+<td>payload</td>
+<td><code>Object</code></td>
+<td>a JSON serializable object (unless json is set to false in params, in which case this should be a buffer or string)</td>
+</tr>
+<tr>
+<td>[options]</td>
+<td><code>Object</code></td>
+<td>additional request options, see <a href="https://github.com/request/request#requestoptions-callback">request library</a> for options</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong></p>
+<pre class="prettyprint source lang-js"><code>it(&quot;should support POST requests&quot;, async function () {
+        var response = await post(testUrl, {&quot;num&quot;: 2,&quot;str&quot;: &quot;test&quot;});
+        ...
+    });
+</code></pre>
+<p><a name="module_t-rest.patch"></a></p>
+<h3>t-rest.patch(uri, [payload], [options]) ⇒ <code>Promise</code></h3>
+<p>Perform HTTP PATCH request</p>
+<p><strong>Kind</strong>: static method of <a href="#module_t-rest"><code>t-rest</code></a><br>
+<strong>Returns</strong>: <code>Promise</code> - - Promise which will resolve to a <a href="ChakramResponse">ChakramResponse</a> object</p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>uri</td>
+<td><code>string</code></td>
+<td>fully qualified uri</td>
+</tr>
+<tr>
+<td>[payload]</td>
+<td><code>Object</code></td>
+<td>a JSON serializable object (unless json is set to false in params, in which case this should be a buffer or string)</td>
+</tr>
+<tr>
+<td>[options]</td>
+<td><code>Object</code></td>
+<td>additional request options, see <a href="https://github.com/request/request#requestoptions-callback">request library</a> for options</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong></p>
+<pre class="prettyprint source lang-js"><code>it(&quot;should support PATCH requests&quot;, async function () {
+        var response = await patch(testUrl, {&quot;num&quot;: 2,&quot;str&quot;: &quot;test&quot;});
+        ...
+    });
+</code></pre>
+<p><a name="module_t-rest.put"></a></p>
+<h3>t-rest.put(uri, payload, [options]) ⇒ <code>Promise</code></h3>
+<p>Perform HTTP PUT request</p>
+<p><strong>Kind</strong>: static method of <a href="#module_t-rest"><code>t-rest</code></a><br>
+<strong>Returns</strong>: <code>Promise</code> - - Promise which will resolve to a <a href="ChakramResponse">ChakramResponse</a> object</p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>uri</td>
+<td><code>string</code></td>
+<td>fully qualified uri</td>
+</tr>
+<tr>
+<td>payload</td>
+<td><code>Object</code></td>
+<td>a JSON serializable object (unless json is set to false in params, in which case this should be a buffer or string)</td>
+</tr>
+<tr>
+<td>[options]</td>
+<td><code>Object</code></td>
+<td>additional request options, see <a href="https://github.com/request/request#requestoptions-callback">request library</a> for options</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong></p>
+<pre class="prettyprint source lang-js"><code>it(&quot;should support PUT requests&quot;, async function () {
+        var response = await put(testUrl, {&quot;num&quot;: 2,&quot;str&quot;: &quot;test&quot;});
+        ...
+    });
+</code></pre>
+<p><a name="module_t-rest.delete"></a></p>
+<h3>t-rest.delete(uri, [payload], [options]) ⇒ <code>Promise</code></h3>
+<p>Perform HTTP DELETE request</p>
+<p><strong>Kind</strong>: static method of <a href="#module_t-rest"><code>t-rest</code></a><br>
+<strong>Returns</strong>: <code>Promise</code> - - Promise which will resolve to a <a href="ChakramResponse">ChakramResponse</a> object</p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>uri</td>
+<td><code>string</code></td>
+<td>fully qualified uri</td>
+</tr>
+<tr>
+<td>[payload]</td>
+<td><code>Object</code></td>
+<td>a JSON serializable object (unless json is set to false in params, in which case this should be a buffer or string)</td>
+</tr>
+<tr>
+<td>[options]</td>
+<td><code>Object</code></td>
+<td>additional request options, see <a href="https://github.com/request/request#requestoptions-callback">request library</a> for options</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong></p>
+<pre class="prettyprint source lang-js"><code>it(&quot;should support DELETE requests&quot;, async function () {
+        var response = await delete(testUrl);
+        ...
+    });
+</code></pre>
+<p><a name="module_t-rest.setDefaultRequest"></a></p>
+<h3>t-rest.setDefaultRequest([options])</h3>
+<p>Sets the default request options applied to all future requests.</p>
+<p><strong>Kind</strong>: static method of <a href="#module_t-rest"><code>t-rest</code></a></p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[options]</td>
+<td><code>Object</code></td>
+<td>default request options, see <a href="https://www.npmjs.com/package/request-promise#cheat-sheet">request-promise library</a> for options</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong></p>
+<pre class="prettyprint source lang-js"><code>...
+    describe(&quot;default request&quot;, function () {
+    before(function () {
+        http.setDefaultRequest({
+            headers: {
+                Testing: 'default-option'
+            }
+        });
+    });
+    it(&quot;should allow default request settings to be applied to multiple requests&quot;, async function () {
+        let firstResp  = await get(&quot;http://httpbin.org/get&quot;);
+        ...
+    });
+</code></pre>
+<p><a name="module_t-rest.clearDefaultRequest"></a></p>
+<h3>t-rest.clearDefaultRequest()</h3>
+<p>Clear default request options and cookies</p>
+<p><strong>Kind</strong>: static method of <a href="#module_t-rest"><code>t-rest</code></a><br>
+<strong>Example</strong></p>
+<pre class="prettyprint source lang-js"><code>it(&quot;should allow clearing default settings&quot;, async function () {
+        http.clearDefaultRequest();
+        let resp = await get(&quot;http://httpbin.org/get&quot;);
+        expect(resp.body.headers.Testing).to.be.undefined;
+    });
+</code></pre>
+<p><a name="module_http"></a></p>
+<h2>http</h2>
+<p>HTTP Module</p>
+<p><strong>Example</strong></p>
+<pre class="prettyprint source lang-js"><code>var {request,get,post,put,patch,delete,head,options,expect,jar} = require(&quot;t-rest&quot;).http;
+</code></pre>
+<ul>
+<li><a href="#module_http">http</a>
+<ul>
+<li><a href="#module_http.request">.request(method, uri, [options])</a> ⇒ <code>Promise</code></li>
+<li><a href="#module_http.jar">.jar()</a></li>
+<li><a href="#module_http.get">.get(uri, [options])</a> ⇒ <code>Promise</code></li>
+</ul>
+</li>
+</ul>
+<p><a name="module_http.request"></a></p>
+<h3>http.request(method, uri, [options]) ⇒ <code>Promise</code></h3>
+<p>Perform HTTP request</p>
+<p><strong>Kind</strong>: static method of <a href="#module_http"><code>http</code></a><br>
+<strong>Returns</strong>: <code>Promise</code> - - Promise which will resolve to a <a href="T-RestResponse">T-RestResponse</a> object</p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>method</td>
+<td><code>string</code></td>
+<td>the HTTP method/verb to use (GET, POST, PUT, DELTE, etc...)</td>
+</tr>
+<tr>
+<td>uri</td>
+<td><code>string</code></td>
+<td>fully qualified uri</td>
+</tr>
+<tr>
+<td>[options]</td>
+<td><code>Object</code></td>
+<td>additional request options, 'method' and 'uri' will override function args if specified within this object , see <a href="https://www.npmjs.com/package/request-promise#cheat-sheet">request-promise library</a> for options</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong></p>
+<pre class="prettyprint source lang-js"><code>it(&quot;should support method and uri&quot;, async function () {
+        var response = await request(&quot;GET&quot;, &quot;http://httpbin.org/get?test=str&quot;);
+        ...
+    });
+</code></pre>
+<p><a name="module_http.jar"></a></p>
+<h3>http.jar()</h3>
+<p>Returns global cookie jar</p>
+<p><strong>Kind</strong>: static method of <a href="#module_http"><code>http</code></a><br>
+<strong>Example</strong></p>
+<pre class="prettyprint source lang-js"><code>it(&quot;should use default cookies jar with {jar:http.jar()}&quot;, async function () {
+        let response  = await get(&quot;http://httpbin.org/get&quot;, {jar:http.jar()});
+        ...
+    });
+</code></pre>
+<p><a name="module_http.get"></a></p>
+<h3>http.get(uri, [options]) ⇒ <code>Promise</code></h3>
+<p>Perform HTTP GET request</p>
+<p><strong>Kind</strong>: static method of <a href="#module_http"><code>http</code></a><br>
+<strong>Returns</strong>: <code>Promise</code> - - Promise which will resolve to a <a href="ChakramResponse">ChakramResponse</a> object</p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>uri</td>
+<td><code>string</code></td>
+<td>fully qualified uri</td>
+</tr>
+<tr>
+<td>[options]</td>
+<td><code>Object</code></td>
+<td>additional request options, see  <a href="https://github.com/request/request#requestoptions-callback">request library</a> for options</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong></p>
+<pre class="prettyprint source lang-js"><code>it(&quot;should allow GET requests&quot;, async function () {
+        let obj = await get(&quot;http://httpbin.org/get?test=str&quot;);
+        ...
+    });
+</code></pre></article>
+    </section>
+
+
+
+
+
+
+        
+
+        <footer>
+            Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.2</a> on Sun Jun 30 2019 16:14:52 GMT-0600 (Central Standard Time)
+        </footer>
+    </div>
+</div>
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+<script src="scripts/main.js"></script>
+</body>
+</html>
