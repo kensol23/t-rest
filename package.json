@@ -7,7 +7,7 @@
     "pretest": "npm install",
     "test": "nyc mocha",
     "predoc": "npm install",
-    "doc": "jsdoc2md -c jsdoc.conf lib/*.js > README.md && jsdoc -t node_modules/jaguarjs-jsdoc -c jsdoc.conf -R README.md -r lib"
+    "doc": "jsdoc2md -c jsdoc.conf lib/*.js > README.md && jsdoc -t node_modules/jaguarjs-jsdoc -c conf.json -R README.md -r lib"
   },
   "repository": {
     "type": "git",
