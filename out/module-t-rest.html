@@ -40,33 +40,6 @@
     </div>
     <ul class="list">
     
-        <li class="item" data-name="module:http">
-            <span class="title">
-                <a href="module-http.html">module:http</a>
-                
-            </span>
-            <ul class="members itemMembers">
-            
-            </ul>
-            <ul class="typedefs itemMembers">
-            
-            </ul>
-            <ul class="methods itemMembers">
-            
-            <span class="subtitle">Methods</span>
-            
-                <li data-name="module:http.get"><a href="module-http.html#.get">get</a></li>
-            
-                <li data-name="module:http.jar"><a href="module-http.html#.jar">jar</a></li>
-            
-                <li data-name="module:http.request"><a href="module-http.html#.request">request</a></li>
-            
-            </ul>
-            <ul class="events itemMembers">
-            
-            </ul>
-        </li>
-    
         <li class="item" data-name="module:t-rest">
             <span class="title">
                 <a href="module-t-rest.html">module:t-rest</a>
@@ -86,7 +59,11 @@
             
                 <li data-name="module:t-rest.delete"><a href="module-t-rest.html#.delete">delete</a></li>
             
+                <li data-name="module:t-rest.get"><a href="module-t-rest.html#.get">get</a></li>
+            
                 <li data-name="module:t-rest.head"><a href="module-t-rest.html#.head">head</a></li>
+            
+                <li data-name="module:t-rest.jar"><a href="module-t-rest.html#.jar">jar</a></li>
             
                 <li data-name="module:t-rest.options"><a href="module-t-rest.html#.options">options</a></li>
             
@@ -95,6 +72,8 @@
                 <li data-name="module:t-rest.post"><a href="module-t-rest.html#.post">post</a></li>
             
                 <li data-name="module:t-rest.put"><a href="module-t-rest.html#.put">put</a></li>
+            
+                <li data-name="module:t-rest.request"><a href="module-t-rest.html#.request">request</a></li>
             
                 <li data-name="module:t-rest.setDefaultRequest"><a href="module-t-rest.html#.setDefaultRequest">setDefaultRequest</a></li>
             
@@ -195,7 +174,7 @@
     
         
         <div class="tag-source">
-            verbs.js, line 196
+            verbs.js, line 193
         </div>
         
     </div>
@@ -278,7 +257,7 @@
     
         
         <div class="tag-source">
-            verbs.js, line 161
+            verbs.js, line 158
         </div>
         
     </div>
@@ -492,6 +471,197 @@
             
 <dt>
     <div class="nameContainer">
+        <h4 class="name" id=".get">
+            
+            <span class="type-signature static">static</span>module:t-rest.get<span class="signature">(uri, <span class="optional">options</span>)</span><span class="glyphicon glyphicon-circle-arrow-right"></span><span class="type-signature returnType">{Promise}</span>
+        </h4>
+    
+        
+        <div class="tag-source">
+            verbs.js, line 72
+        </div>
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Perform HTTP GET request
+    </div>
+    
+
+    
+    
+    
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>uri</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                    
+                    
+                        
+                    
+                
+                fully qualified uri</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                    
+                        <span class="optional">optional</span>
+                    
+                    
+                        
+                    
+                
+                additional request options, see  <a href="https://github.com/request/request#requestoptions-callback">request library</a> for options</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Type</th>
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+        <tr>
+            
+            <td class="type">
+            
+                        Promise
+                        
+                    
+            </td>
+            <td class="description last">- Promise which will resolve to a ChakramResponse object</td>
+        </tr>
+    
+    </tbody>
+</table>
+
+    
+    
+    
+        <h5>Example</h5>
+        
+
+    
+    <pre class="prettyprint"><code>it("should allow GET requests", async function () {
+        let obj = await get("http://httpbin.org/get?test=str");
+        ...
+    });</code></pre>
+    
+
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
         <h4 class="name" id=".head">
             
             <span class="type-signature static">static</span>module:t-rest.head<span class="signature">(uri, <span class="optional">options</span>)</span><span class="glyphicon glyphicon-circle-arrow-right"></span><span class="type-signature returnType">{Promise}</span>
@@ -499,7 +669,7 @@
     
         
         <div class="tag-source">
-            verbs.js, line 89
+            verbs.js, line 86
         </div>
         
     </div>
@@ -683,6 +853,88 @@
             
 <dt>
     <div class="nameContainer">
+        <h4 class="name" id=".jar">
+            
+            <span class="type-signature static">static</span>module:t-rest.jar<span class="signature">()</span>
+        </h4>
+    
+        
+        <div class="tag-source">
+            verbs.js, line 59
+        </div>
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Returns global cookie jar
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+        <h5>Example</h5>
+        
+
+    
+    <pre class="prettyprint"><code>it("should use default cookies jar with {jar:http.jar()}", async function () {
+        let response  = await get("http://httpbin.org/get", {jar:http.jar()});
+        ...
+    });</code></pre>
+    
+
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
         <h4 class="name" id=".options">
             
             <span class="type-signature static">static</span>module:t-rest.options<span class="signature">(uri, <span class="optional">options</span>)</span><span class="glyphicon glyphicon-circle-arrow-right"></span><span class="type-signature returnType">{Promise}</span>
@@ -690,7 +942,7 @@
     
         
         <div class="tag-source">
-            verbs.js, line 103
+            verbs.js, line 100
         </div>
         
     </div>
@@ -881,7 +1133,7 @@
     
         
         <div class="tag-source">
-            verbs.js, line 133
+            verbs.js, line 130
         </div>
         
     </div>
@@ -1102,7 +1354,7 @@
     
         
         <div class="tag-source">
-            verbs.js, line 117
+            verbs.js, line 114
         </div>
         
     </div>
@@ -1321,7 +1573,7 @@
     
         
         <div class="tag-source">
-            verbs.js, line 147
+            verbs.js, line 144
         </div>
         
     </div>
@@ -1533,6 +1785,225 @@
             
 <dt>
     <div class="nameContainer">
+        <h4 class="name" id=".request">
+            
+            <span class="type-signature static">static</span>module:t-rest.request<span class="signature">(method, uri, <span class="optional">options</span>)</span><span class="glyphicon glyphicon-circle-arrow-right"></span><span class="type-signature returnType">{Promise}</span>
+        </h4>
+    
+        
+        <div class="tag-source">
+            verbs.js, line 45
+        </div>
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Perform HTTP request
+    </div>
+    
+
+    
+    
+    
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>method</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                    
+                    
+                        
+                    
+                
+                the HTTP method/verb to use (GET, POST, PUT, DELTE, etc...)</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>uri</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                    
+                    
+                        
+                    
+                
+                fully qualified uri</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                    
+                        <span class="optional">optional</span>
+                    
+                    
+                        
+                    
+                
+                additional request options, 'method' and 'uri' will override function args if specified within this object , see <a href="https://www.npmjs.com/package/request-promise#cheat-sheet">request-promise library</a> for options</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Type</th>
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+        <tr>
+            
+            <td class="type">
+            
+                        Promise
+                        
+                    
+            </td>
+            <td class="description last">- Promise which will resolve to a T-RestResponse object</td>
+        </tr>
+    
+    </tbody>
+</table>
+
+    
+    
+    
+        <h5>Example</h5>
+        
+
+    
+    <pre class="prettyprint"><code>it("should support method and uri", async function () {
+        var response = await request("GET", "http://httpbin.org/get?test=str");
+        ...
+    });</code></pre>
+    
+
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
         <h4 class="name" id=".setDefaultRequest">
             
             <span class="type-signature static">static</span>module:t-rest.setDefaultRequest<span class="signature">(<span class="optional">options</span>)</span>
@@ -1540,7 +2011,7 @@
     
         
         <div class="tag-source">
-            verbs.js, line 181
+            verbs.js, line 178
         </div>
         
     </div>
@@ -1689,7 +2160,7 @@
         
 
         <footer>
-            Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.2</a> on Sun Jun 30 2019 16:23:13 GMT-0600 (Central Standard Time)
+            Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.2</a> on Sun Jun 30 2019 17:22:51 GMT-0600 (Central Standard Time)
         </footer>
     </div>
 </div>

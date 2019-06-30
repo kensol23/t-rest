@@ -1,14 +1,3 @@
-## Modules
-
-<dl>
-<dt><a href="#module_t-rest">t-rest</a></dt>
-<dd><p>T-Rest Module</p>
-</dd>
-<dt><a href="#module_http">http</a></dt>
-<dd><p>HTTP Module</p>
-</dd>
-</dl>
-
 <a name="module_t-rest"></a>
 
 ## t-rest
@@ -20,6 +9,9 @@ var {request,get,post,put,patch,delete,head,options,expect,jar} = require("t-res
 ```
 
 * [t-rest](#module_t-rest)
+    * [.request(method, uri, [options])](#module_t-rest.request) ⇒ <code>Promise</code>
+    * [.jar()](#module_t-rest.jar)
+    * [.get(uri, [options])](#module_t-rest.get) ⇒ <code>Promise</code>
     * [.head(uri, [options])](#module_t-rest.head) ⇒ <code>Promise</code>
     * [.options(uri, [options])](#module_t-rest.options) ⇒ <code>Promise</code>
     * [.post(uri, payload, [options])](#module_t-rest.post) ⇒ <code>Promise</code>
@@ -29,6 +21,60 @@ var {request,get,post,put,patch,delete,head,options,expect,jar} = require("t-res
     * [.setDefaultRequest([options])](#module_t-rest.setDefaultRequest)
     * [.clearDefaultRequest()](#module_t-rest.clearDefaultRequest)
 
+<a name="module_t-rest.request"></a>
+
+### t-rest.request(method, uri, [options]) ⇒ <code>Promise</code>
+Perform HTTP request
+
+**Kind**: static method of [<code>t-rest</code>](#module_t-rest)  
+**Returns**: <code>Promise</code> - - Promise which will resolve to a [T-RestResponse](T-RestResponse) object  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| method | <code>string</code> | the HTTP method/verb to use (GET, POST, PUT, DELTE, etc...) |
+| uri | <code>string</code> | fully qualified uri |
+| [options] | <code>Object</code> | additional request options, 'method' and 'uri' will override function args if specified within this object , see [request-promise library](https://www.npmjs.com/package/request-promise#cheat-sheet) for options |
+
+**Example**  
+```js
+it("should support method and uri", async function () {
+        var response = await request("GET", "http://httpbin.org/get?test=str");
+        ...
+    });
+```
+<a name="module_t-rest.jar"></a>
+
+### t-rest.jar()
+Returns global cookie jar
+
+**Kind**: static method of [<code>t-rest</code>](#module_t-rest)  
+**Example**  
+```js
+it("should use default cookies jar with {jar:http.jar()}", async function () {
+        let response  = await get("http://httpbin.org/get", {jar:http.jar()});
+        ...
+    });
+```
+<a name="module_t-rest.get"></a>
+
+### t-rest.get(uri, [options]) ⇒ <code>Promise</code>
+Perform HTTP GET request
+
+**Kind**: static method of [<code>t-rest</code>](#module_t-rest)  
+**Returns**: <code>Promise</code> - - Promise which will resolve to a [ChakramResponse](ChakramResponse) object  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| uri | <code>string</code> | fully qualified uri |
+| [options] | <code>Object</code> | additional request options, see  [request library](https://github.com/request/request#requestoptions-callback) for options |
+
+**Example**  
+```js
+it("should allow GET requests", async function () {
+        let obj = await get("http://httpbin.org/get?test=str");
+        ...
+    });
+```
 <a name="module_t-rest.head"></a>
 
 ### t-rest.head(uri, [options]) ⇒ <code>Promise</code>
@@ -192,74 +238,5 @@ it("should allow clearing default settings", async function () {
         http.clearDefaultRequest();
         let resp = await get("http://httpbin.org/get");
         expect(resp.body.headers.Testing).to.be.undefined;
-    });
-```
-<a name="module_http"></a>
-
-## http
-HTTP Module
-
-**Example**  
-```js
-var {request,get,post,put,patch,delete,head,options,expect,jar} = require("t-rest").http;
-```
-
-* [http](#module_http)
-    * [.request(method, uri, [options])](#module_http.request) ⇒ <code>Promise</code>
-    * [.jar()](#module_http.jar)
-    * [.get(uri, [options])](#module_http.get) ⇒ <code>Promise</code>
-
-<a name="module_http.request"></a>
-
-### http.request(method, uri, [options]) ⇒ <code>Promise</code>
-Perform HTTP request
-
-**Kind**: static method of [<code>http</code>](#module_http)  
-**Returns**: <code>Promise</code> - - Promise which will resolve to a [T-RestResponse](T-RestResponse) object  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| method | <code>string</code> | the HTTP method/verb to use (GET, POST, PUT, DELTE, etc...) |
-| uri | <code>string</code> | fully qualified uri |
-| [options] | <code>Object</code> | additional request options, 'method' and 'uri' will override function args if specified within this object , see [request-promise library](https://www.npmjs.com/package/request-promise#cheat-sheet) for options |
-
-**Example**  
-```js
-it("should support method and uri", async function () {
-        var response = await request("GET", "http://httpbin.org/get?test=str");
-        ...
-    });
-```
-<a name="module_http.jar"></a>
-
-### http.jar()
-Returns global cookie jar
-
-**Kind**: static method of [<code>http</code>](#module_http)  
-**Example**  
-```js
-it("should use default cookies jar with {jar:http.jar()}", async function () {
-        let response  = await get("http://httpbin.org/get", {jar:http.jar()});
-        ...
-    });
-```
-<a name="module_http.get"></a>
-
-### http.get(uri, [options]) ⇒ <code>Promise</code>
-Perform HTTP GET request
-
-**Kind**: static method of [<code>http</code>](#module_http)  
-**Returns**: <code>Promise</code> - - Promise which will resolve to a [ChakramResponse](ChakramResponse) object  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| uri | <code>string</code> | fully qualified uri |
-| [options] | <code>Object</code> | additional request options, see  [request library](https://github.com/request/request#requestoptions-callback) for options |
-
-**Example**  
-```js
-it("should allow GET requests", async function () {
-        let obj = await get("http://httpbin.org/get?test=str");
-        ...
     });
 ```
