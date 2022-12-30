@@ -44,7 +44,7 @@
   "devDependencies": {
     "eslint": "^6.0.1",
     "jsdoc-to-markdown": "^5.0.0",
-    "mocha": "^6.1.4",
+    "mocha": "^10.2.0",
     "nyc": "^14.1.1",
     "jaguarjs-jsdoc": "kensol23/jaguarjs-jsdoc",
     "jsdoc": "latest"
